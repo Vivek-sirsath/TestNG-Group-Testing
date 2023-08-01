@@ -20,12 +20,12 @@ public class GroupTestingClass {
 		System.out.println("This is T3 test logic");
 	}
 	
-	@Test(groups= {"sanity"})
+	@Test(groups= {"sanity"}) // {windows.sanity}
 	public void tc4() {
 		System.out.println("This is T4 test logic");
 	}
 	
-	@Test(groups= {"regression"})
+	@Test(groups= {"regression"})  // {linux.regression}
 	public void tc5() {
 		System.out.println("This is T5 test logic");
 	}
