@@ -2,7 +2,7 @@ package groupTestingPackage;
 
 import org.testng.annotations.Test;
 
-@Test(groups="CompleteClassLevelTestsGroup")
+@Test (groups= "CompleteClassLevelTestsGroup")
 public class GroupTestingClass {
 
 	@Test(groups= {"smoke"})
@@ -20,7 +20,7 @@ public class GroupTestingClass {
 		System.out.println("This is T3 test logic");
 	}
 	
-	@Test(groups= {"sanity"}) // {windows.sanity}
+	@Test(groups= {"windows.sanity"}) // {windows.sanity}
 	public void tc4() {
 		System.out.println("This is T4 test logic");
 	}

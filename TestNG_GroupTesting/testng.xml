@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<test thread-count="5"  name="Test">
+	<test thread-count="5" name="Test">
 
 		<groups>
-			<!-- Test execution by defining custom group name -->
-			<!-- Define the group name in define tag -->
-			
-			<!-- <define name="TwilightTestCaseGroup">
-				<include name="sanity"></include>
-				<include name="smoke"></include> 
-			</define> -->
 
 			<run>
-			
-			    <!-- Test execution using class level group -->
-			    <include name="CompleteClassLevelTestsGroup"></include>
-			    <exclude name="regression"></exclude>
-                <!-- Test execution using custom group 
-				<include name="TwilightTestCaseGroup"></include> -->
-
-				<!-- Test execution using groups  
-				<include name="smoke"></include> 
-				<include name="regression"></include>
-				<exclude name="sanity"></exclude> -->
+				<!-- Test execution using groups -->
+				<!--include name="smoke"></include -->
+				<!-- include name="regression"></include -->
+				<include name="sanity"></include>
 			</run>
 		</groups>
 		<classes>

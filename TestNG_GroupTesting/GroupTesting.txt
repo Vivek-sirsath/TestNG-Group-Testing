@@ -1,0 +1,109 @@
+
+                                      Execution Using Group Name
+                       Note: Run as 'TestNG Suite' using xml file NOT as 'TestNG Test'
+===========================================================================================================
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+
+		<groups>
+
+			<run>
+				<!-- Test execution using groups -->
+				<!--include name="smoke"></include -->
+				<!-- include name="regression"></include -->
+				<include name="sanity"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="groupTestingPackage.GroupTestingClass" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+
+###########################################################################################################
+
+##########################################################################################################
+
+                                 Execution using meta group Name
+                    Note: Run as 'TestNG Suite' using xml file NOT as 'TestNG Test'
+===========================================================================================================
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+
+		<groups>
+			<!-- Test execution by defining custom group name -->
+			<!-- Define the meta group name in define tag -->
+
+			<define name="TwilightTestCaseGroup">
+				<include name="sanity"></include>
+				<include name="regression"></include>
+			</define>
+
+			<run>
+				<!-- Test execution using meta group --> 
+				<include name="TwilightTestCaseGroup"></include>
+
+			</run>
+		</groups>
+		<classes>
+			<class name="groupTestingPackage.GroupTestingClass" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+###########################################################################################################
+
+###########################################################################################################
+
+                                 Execution using class level group name
+                     Note: Run as 'TestNG Suite' using xml file NOT as 'TestNG Test'
+===========================================================================================================
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+
+		<groups>
+			<run>
+				<!-- Test execution using class level group -->
+				<include name="CompleteClassLevelTestsGroup"></include>
+				<exclude name="regression"></exclude>
+			</run>
+		</groups>
+		<classes>
+			<class name="groupTestingPackage.GroupTestingClass" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+###########################################################################################################
+
+###########################################################################################################
+                               Execution using (regular expression) windows.*
+                       Note: Run as 'TestNG Suite' using xml file NOT as 'TestNG Test'
+=========================================================================================================== 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+
+		<groups>
+
+			<run>				
+				<include name="windows.*"></include >
+				<!-- include name="linux.*"></include -->
+			</run>
+
+		</groups>
+		<classes>
+			<class name="groupTestingPackage.GroupTestingClass" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
